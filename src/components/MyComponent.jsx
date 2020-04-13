@@ -34,14 +34,11 @@ export default class MyComponent extends React.Component {
     .catch(function (error) {
       console.log(error);
     })
-    .then(function () {
-      // always executed
-    });
   }
 
   render() {
     return (
-      <table>
+      <table className='pure-table'>
         <thead>
           <tr>
             <th>User ID</th>
