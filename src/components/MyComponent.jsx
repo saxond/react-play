@@ -4,7 +4,7 @@ import axios from 'axios';
 class ItemRow extends React.Component {
   render() {
     return (
-      <tr>
+      <tr className={this.props.index % 2 !== 0 ? 'pure-table-odd' : ''}>
         <td>{this.props.item.userId}</td>
         <td>{this.props.item.id}</td>
         <td>{this.props.item.title}</td>
@@ -38,7 +38,7 @@ export default class MyComponent extends React.Component {
 
   render() {
     return (
-      <table className='pure-table'>
+      <table className='pure-table pure-table-horizontal'>
         <thead>
           <tr>
             <th>User ID</th>
@@ -48,7 +48,7 @@ export default class MyComponent extends React.Component {
           </tr>
         </thead>
         <tbody>
-          { this.state.items.map((item) => <ItemRow item={item}/>) }
+          { this.state.items.map((item, index) => <ItemRow item={item} index={index} key={index}/>) }
         </tbody>
       </table>
     );
